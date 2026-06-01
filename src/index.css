@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;550;700;900&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --theme-background: #f8fafc;
+    --theme-card: rgba(255, 255, 255, 0.7);
+    --theme-navbar: rgba(255, 255, 255, 0.55);
+    --theme-text: #1e1b4b;
+    --theme-accent: #6366f1;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--theme-background);
+    background-image: 
+      radial-gradient(at 50% 10%, var(--theme-background) 0px, transparent 60%),
+      radial-gradient(at 5% 30%, rgba(255, 255, 255, 0.35) 0px, transparent 40%),
+      radial-gradient(at 95% 70%, rgba(0, 0, 0, 0.04) 0px, transparent 40%);
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--theme-text);
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    color: var(--theme-text) !important;
+  }
+
+  /* Glassmorphism premium pastel */
+  .glass-card {
+    background-color: var(--theme-card) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    color: var(--theme-text) !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+  }
+
+  .glass-sidebar {
+    background-color: var(--theme-navbar) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: var(--theme-text) !important;
+    box-shadow: 0 10px 40px -15px rgba(0, 0, 0, 0.06);
+  }
+
+  .glass-active-nav {
+    background-color: rgba(99, 102, 241, 0.12) !important;
+    color: var(--theme-accent) !important;
+    border-color: var(--theme-accent) !important;
+  }
+}
+
+/* Custom Fade In Transition Animation */
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom layout typography configurations */
+::selection {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: inherit;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.dark ::webkit-scrollbar-thumb {
+  background: #334155;
+}
